@@ -2,6 +2,9 @@ GEM
   remote: http://rubygems.org/
   specs:
     backports (2.6.5)
+    chronic (0.8.0)
+    chronic_duration (0.9.6)
+      numerizer (~> 0.1.1)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -38,11 +41,25 @@ GEM
     hashie (1.2.0)
     hike (1.2.1)
     httpauth (0.2.0)
+    jenkins-remote-api (0.0.4)
+      libxml-ruby (~> 2.2.2)
+      mechanize (~> 2.0.1)
+      terminal-table
+      thor
     jwt (0.1.5)
       multi_json (>= 1.0)
+    libxml-ruby (2.2.2)
+    mechanize (2.0.1)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (~> 1.8)
+      nokogiri (~> 1.4)
+      webrobots (~> 0.0, >= 0.0.9)
     multi_json (1.3.7)
     multipart-post (1.1.5)
+    net-http-digest_auth (1.2.1)
+    net-http-persistent (1.9)
     nokogiri (1.5.5)
+    numerizer (0.1.1)
     oauth2 (0.8.0)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -73,6 +90,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    terminal-table (1.4.5)
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -80,11 +98,15 @@ GEM
     thor (0.16.0)
     tilt (1.3.3)
     tzinfo (0.3.34)
+    webrobots (0.0.13)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  chronic
+  chronic_duration
   dashing
   debugger
   github_api (~> 0.8.0)
+  jenkins-remote-api
