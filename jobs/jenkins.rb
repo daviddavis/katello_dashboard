@@ -11,7 +11,7 @@ JENKINS_JOBS = [
     'katello-api'
   ]
 
-SCHEDULER.every "60s" do
+SCHEDULER.every "20s" do
   jenkins = Ci::Jenkins.new('http://hudson.rhq.lab.eng.bos.redhat.com:8080/hudson')
   items = []
 
