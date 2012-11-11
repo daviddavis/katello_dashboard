@@ -1,35 +1,50 @@
 <script type='text/javascript'>
 $(function() {
   // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
-  Dashing.gridsterLayout('[{"col":4,"row":1},{"col":1,"row":1},{"col":1,"row":3},{"col":3,"row":3},{"col":4,"row":2},{"col":1,"row":2},{"col":5,"row":1},{"col":2,"row":1},{"col":4,"row":3}]')
   Dashing.widget_base_dimensions = [370, 340]
   Dashing.numColumns = 5
 });
 </script>
 
+<style type='text/css'>
+  #iteration h1 {
+    font-size: 65px;
+  }
+  #iteration h3 {
+    font-size: 35px;
+  }
+</style>
 
-<% content_for(:title) { "1080p dashboard" } %>
+
+<% content_for(:title) { "Katello dashboard" } %>
 
 <div class="gridster">
   <ul>
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
       <div data-view="Clock"></div>
       <i class="icon-time icon-background"></i>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
       <div data-view="Image" data-image="/logo.png"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
-      <div data-id="jenkins" data-view="List" data-title="Job Statuses" style="background-color:orange;" data-moreinfo="Status of jobs in Jenkins" ></div>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1" id="iteration">
+      <div data-id="iteration" data-view="Text" data-title="" data-text="" data-moreinfo=""></div>
+      <i class="icon-calendar icon-background"></i>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="2">
+      <div data-id="jenkins" data-view="List" data-title="Builds" data-moreinfo="Status of jobs in Jenkins" data-unordered="true" style="background: #9c4274"></div>
+      <i class="icon-beaker icon-background" style="margin-top: 150px; font-size: 300px"></i>
+    </li>
+
+    <li data-row="3" data-col="1" data-sizex="2" data-sizey="2">
       <div data-id="pullrequests" data-view="List" data-unordered="false" data-title="Pull Requests" data-moreinfo="pull requests open for katello on github"></div>
+      <i class="icon-github icon-background" style="font-size: 475px"></i>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <li data-row="3" data-col="3" data-sizex="2" data-sizey="1">
       <div data-id="twitter_mentions" data-view="Comments" style="background-color:#ff9618;" data-moreinfo="Tweets tagged with #katello"></div>
       <i class="icon-twitter icon-background"></i>
     </li>
